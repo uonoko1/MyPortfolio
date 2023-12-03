@@ -1,0 +1,17 @@
+.AboutWrapper {
+    height: calc(100% - 2rem);
+    padding: 1rem;
+}
+
+.AboutContainer h1 {
+    margin-top: 4rem;
+}
+
+.AboutContent {
+    margin-top: 4rem;
+}
+
+.AboutContent p {
+    margin-bottom: 4rem;
+    font-size: 20px;
+}

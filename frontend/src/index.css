@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  color: #EEEEEE;
+}
+
+input {
+  outline: none;
+}
+
+input:focus {
+  outline: 0.1px solid #38d;
+}
+
+p {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  white-space: pre-wrap;
+
+  color: #EEEEEE;
+  font-size: 16px;
+}
+
+span {
+  color: #EEEEEE;
+  font-size: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.ScrollableElement {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.ScrollableElement::-webkit-scrollbar {
+  display: none;
+}
+
+.ScrollableElement {
+  -ms-overflow-style: none;
+}
+
+h1 {
+  color: #EEEEEE;
+  font-size: 2.5em !important;
+}
+
+h2 {
+  font-size: 1.8em !important;
+  color: #EEEEEE;
+}
+
+h3 {
+  font-size: 1.5em !important;
+  color: #EEEEEE;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.URL {
+  color: #1b94e0;
+  display: inline-block;
+  max-width: 60%;
+  overflow: hidden;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+textarea {
+  resize: none;
+}

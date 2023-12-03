@@ -1,0 +1,44 @@
+.TopbarContainer {
+    width: 100%;
+    height: 9vh;
+    /* border-bottom: 1px solid #AAAAAA; */
+    background-color: #23262b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.TopbarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10rem;
+    height: 100%;
+}
+
+@media screen and (max-width: 1450px) {
+    .TopbarContent {
+        padding: 0 5rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .TopbarContent {
+        padding: 0 2rem;
+    }
+}
+
+.TopbarContentImg {
+    width: 60px;
+    height: auto;
+}
+
+.TopbarContentList {
+    flex-grow: 1;
+    width: 100%;
+    padding-left: 3rem;
+}
+
+.TopbarContentListButton {
+    width: calc(100%/5);
+}

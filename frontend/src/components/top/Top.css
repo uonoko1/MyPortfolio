@@ -1,0 +1,25 @@
+.TopWrapper {
+    height: 100%;
+}
+
+.TopContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: right;
+    justify-content: start;
+    background-image: url(../../../public/assets/top.jpg);
+    background-position: center;
+    /* 画像の中心を基準にする */
+    background-size: cover;
+    /* 画像をコンテナに合わせて調整 */
+}
+
+.TopContainer h1 {
+    /* padding-bottom: 5rem; */
+    padding: 5rem 10rem 0 0;
+    color: #d2d262;
+    font-size: 8em !important;
+}

@@ -32,6 +32,8 @@ export default function ModalWork() {
     return (
         <animated.div style={fade} className="ModalWorkWrapper" onClick={closeModal}>
             <animated.div style={scale} className="ModalWorkContainer" onClick={(e) => e.stopPropagation()}>
+                <h2 className="ModalWorkContentTitle">{dataInfo === "LiveGT" ? "LiveGT" : (dataInfo === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</h2>
+                <img src={`${process.env.REACT_APP_API_URL_A}/assets/${dataInfo === "LiveGT" ? "LiveGTImage" : (dataInfo === "AdminLiveGT" ? "AdminLiveGTImage" : "DaichiSakai'sPortfolio")}.png`} alt="WorkImg" className="ModalWorkContentImgSp" />
                 <div className="ModalWorkContent">
                     <div className="ModalWorkDescription">
                         <h3><p className="ModalWorkContentH3P">{dataInfo === "LiveGT" ? "LiveGT" : (dataInfo === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</p></h3>

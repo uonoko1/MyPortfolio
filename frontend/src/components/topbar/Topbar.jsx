@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Topbar.css";
 import { useClickContext } from '../../state/ClickContext';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Topbar() {
     const { topRef, aboutRef, profileRef, worksRef, contactRef } = useClickContext();
@@ -14,6 +15,7 @@ export default function Topbar() {
     return (
         <div className="TopbarContainer">
             <div className="TopbarContent">
+                <MenuIcon className="TopbarContentMenuIcon" />
                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/brandmark-design.png`} alt="brandmark-design" className="TopbarContentImg" />
                 <div className="TopbarContentList">
                     <button type="button" className="TopbarContentListButton" onClick={() => scrollToRef(topRef)}>Top</button>

@@ -16,12 +16,47 @@
     margin-top: 4rem;
 }
 
+@media screen and (max-height: 740px),
+screen and (max-width: 600px) {
+    .ContactWrapper {
+        height: calc(100% - 2rem);
+        /* padding: 4rem; */
+    }
+
+    .ContactWrapper h1 {
+        margin-top: 2rem;
+    }
+
+    .ContactContent {
+        margin-top: 2rem;
+    }
+}
+
 .ContactContentDiv {
     display: flex;
     flex-direction: column;
     padding: 2rem 2rem 1rem 2rem;
     height: calc(100% - 3rem - 6px);
     position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+    .ContactContentDiv {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ContactContentDiv {
+        padding: 2rem 0 0 0rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ContactContentDiv {
+        padding: 0rem 0 0 0rem;
+        height: calc(100% - 1rem - 6px);
+    }
 }
 
 .ContactContentP {
@@ -46,15 +81,65 @@
     margin-bottom: 4rem;
 }
 
+@media screen and (max-width: 750px) {
+    .ContactContent {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .ContactContent {
+        width: 90%;
+    }
+}
+
 .ContactContentDivNameAndEmail {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .ContactContentDivNameAndEmail {
+        flex-direction: column;
+    }
 }
 
 .ContactContentDivNameAndEmail div {
     width: 100%;
-    padding: 0 10%;
+}
+
+.ContactContentDivName {
+    padding: 0 2% 0 10%;
+}
+
+.ContactContentDivEmail {
+    padding: 0 10% 0 2%;
+}
+
+@media screen and (max-width: 800px) {
+    .ContactContentDivName {
+        padding: 0 1% 0 5%;
+    }
+
+    .ContactContentDivEmail {
+        padding: 0 5% 0 1%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ContactContentDivNameAndEmail>div {
+        width: 80%;
+    }
+
+    .ContactContentDivName {
+        padding: 0 10%;
+    }
+
+    .ContactContentDivEmail {
+        padding: 0 10%;
+    }
 }
 
 .ContactContentDivNameAndEmail input {
@@ -72,6 +157,18 @@
 
 .ContactContentDivComment textarea {
     width: 80%;
+}
+
+@media screen and (max-width: 800px) {
+    .ContactContentDivComment textarea {
+        width: calc(88% + 8px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ContactContentDivComment textarea {
+        width: 80%;
+    }
 }
 
 .ContactContentButtonDiv {
@@ -94,4 +191,10 @@
 
 .ContactContentInputP {
     height: 27px;
+}
+
+@media screen and (max-height: 725px) {
+    .ContactContent {
+        height: 80%;
+    }
 }

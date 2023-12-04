@@ -101,6 +101,23 @@ h3 {
   color: #EEEEEE;
 }
 
+h4 {
+  font-size: 1.3em !important;
+  color: #EEEEEE;
+}
+
+@media screen and (max-width: 1030px) {
+  h4 {
+    font-size: 1em !important;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  h4 {
+    font-size: 0.8em !important;
+  }
+}
+
 li {
   list-style: none;
 }

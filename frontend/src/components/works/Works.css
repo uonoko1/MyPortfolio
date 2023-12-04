@@ -12,6 +12,22 @@
     /* display: flex; */
 }
 
+@media screen and (max-height: 740px),
+screen and (max-width: 600px) {
+    .WorksWrapper {
+        height: calc(100% - 2rem);
+        /* padding: 4rem; */
+    }
+
+    .WorksWrapper h1 {
+        margin-top: 2rem;
+    }
+
+    .WorksContent {
+        margin-top: 2rem;
+    }
+}
+
 
 .WorksContent button {
     background: none;

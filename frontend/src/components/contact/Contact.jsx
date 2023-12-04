@@ -70,7 +70,7 @@ export default function Contact() {
                 <div className="ContactContentWrapper">
                     <form className="ContactContent window">
                         <div className="ContactContentTitle title-bar">
-                            <h3 className="title-bar-text">Contact</h3>
+                            <h3 className="title-bar-text">連絡フォーム</h3>
                             <div className="title-bar-controls">
                                 <button aria-label="Minimize"></button>
                                 <button aria-label="Maximize"></button>

@@ -84,7 +84,7 @@ export default function Cube({ size, xPosition, yPosition, position, data }) {
                             <div className="CubeContainer">
                                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/${data === "LiveGT" ? "LiveGTImage" : (data === "AdminLiveGT" ? "AdminLiveGTImage" : "DaichiSakai'sPortfolio")}.png`} alt="WorkImg" className="CubeContentImg" />
                                 <p className="CubeContent">{data === "LiveGT" ? "LiveGT" : (data === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</p>
-                                <div className="CubeContent">
+                                <div className="CubeContentDiv">
                                     <p className="CubeContentP">{data === "LiveGT" ? "ライブのリアルタイム位置情報共有サービス" : (data === "AdminLiveGT" ? "LiveGTの管理システム" : "酒井大地のエンジニアポートフォリオ")}</p>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@ export default function Cube({ size, xPosition, yPosition, position, data }) {
                             <div className="CubeContainer">
                                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/${data === "LiveGT" ? "LiveGTImage" : (data === "AdminLiveGT" ? "AdminLiveGTImage" : "DaichiSakai'sPortfolio")}.png`} alt="" className="CubeContentImg" />
                                 <p className="CubeContent">{data === "LiveGT" ? "LiveGT" : (data === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</p>
-                                <div className="CubeContent">
+                                <div className="CubeContentDiv">
                                     <p className="CubeContentP">{data === "LiveGT" ? "ライブのリアルタイム位置情報共有サービス" : (data === "AdminLiveGT" ? "LiveGTの管理システム" : "酒井大地のエンジニアポートフォリオ")}</p>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ export default function Cube({ size, xPosition, yPosition, position, data }) {
                             <div className="CubeContainer">
                                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/${data === "LiveGT" ? "LiveGTImage" : (data === "AdminLiveGT" ? "AdminLiveGTImage" : "DaichiSakai'sPortfolio")}.png`} alt="" className="CubeContentImg" />
                                 <p className="CubeContent">{data === "LiveGT" ? "LiveGT" : (data === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</p>
-                                <div className="CubeContent">
+                                <div className="CubeContentDiv">
                                     <p className="CubeContentP">{data === "LiveGT" ? "ライブのリアルタイム位置情報共有サービス" : (data === "AdminLiveGT" ? "LiveGTの管理システム" : "酒井大地のエンジニアポートフォリオ")}</p>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@ export default function Cube({ size, xPosition, yPosition, position, data }) {
                             <div className="CubeContainer">
                                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/${data === "LiveGT" ? "LiveGTImage" : (data === "AdminLiveGT" ? "AdminLiveGTImage" : "DaichiSakai'sPortfolio")}.png`} alt="" className="CubeContentImg" />
                                 <p className="CubeContent">{data === "LiveGT" ? "LiveGT" : (data === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</p>
-                                <div className="CubeContent">
+                                <div className="CubeContentDiv">
                                     <p className="CubeContentP">{data === "LiveGT" ? "ライブのリアルタイム位置情報共有サービス" : (data === "AdminLiveGT" ? "LiveGTの管理システム" : "酒井大地のエンジニアポートフォリオ")}</p>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ export default function Cube({ size, xPosition, yPosition, position, data }) {
                             <div className="CubeContainer">
                                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/${data === "LiveGT" ? "LiveGTImage" : (data === "AdminLiveGT" ? "AdminLiveGTImage" : "DaichiSakai'sPortfolio")}.png`} alt="" className="CubeContentImg" />
                                 <p className="CubeContent">{data === "LiveGT" ? "LiveGT" : (data === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</p>
-                                <div className="CubeContent">
+                                <div className="CubeContentDiv">
                                     <p className="CubeContentP">{data === "LiveGT" ? "ライブのリアルタイム位置情報共有サービス" : (data === "AdminLiveGT" ? "LiveGTの管理システム" : "酒井大地のエンジニアポートフォリオ")}</p>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@ export default function Cube({ size, xPosition, yPosition, position, data }) {
                             <div className="CubeContainer">
                                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/${data === "LiveGT" ? "LiveGTImage" : (data === "AdminLiveGT" ? "AdminLiveGTImage" : "DaichiSakai'sPortfolio")}.png`} alt="" className="CubeContentImg" />
                                 <p className="CubeContent">{data === "LiveGT" ? "LiveGT" : (data === "AdminLiveGT" ? "LiveGT管理システム" : "Daichi Sakai's Portfolio")}</p>
-                                <div className="CubeContent">
+                                <div className="CubeContentDiv">
                                     <p className="CubeContentP">{data === "LiveGT" ? "ライブのリアルタイム位置情報共有サービス" : (data === "AdminLiveGT" ? "LiveGTの管理システム" : "酒井大地のエンジニアポートフォリオ")}</p>
                                 </div>
                             </div>

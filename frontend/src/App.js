@@ -1,23 +1,26 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Topbar from './components/topbar/Topbar';
 import Home from './pages/home/Home';
-import LiveGT from './pages/livegt/LiveGT';
 import { useEffect, useState } from 'react';
 import Cube from './components/cube/Cube';
 import ModalWork from './components/modalWork/ModalWork';
 import { useClickContext } from './state/ClickContext';
+import ModalMenu from './components/modalMenu/ModalMenu';
 
 function Content() {
-  const { dataInfo, setDataInfo } = useClickContext();
+  const { dataInfo, setDataInfo, modalMenu, setModalMenu } = useClickContext();
 
   const [cubes, setCubes] = useState([]);
 
-  const gap = 50; // 立方体間のギャップ
+  let gap = 50; // 立方体間のギャップ
 
   const calculateGrid = (width, height) => {
     const deviceArea = (width * 1) * (height * 1);
-    const cubeWidth = 100;
+    let cubeWidth = 100;
+    if (width < 600) {
+      gap = 30;
+      cubeWidth = 60;
+    }
     const cubeCount = Math.floor(deviceArea / ((cubeWidth + gap) * (cubeWidth + gap)));
 
     const aspectRatio = width / height;
@@ -28,8 +31,14 @@ function Content() {
   };
 
 
-  const getRandomSize = () => {
-    return Math.random() * (100 - 50) + 50; // 50px から 100px の範囲でランダムなサイズ
+  const getRandomSize = (width) => {
+    if (width >= 600) {
+      return Math.random() * (100 - 50) + 50;
+    } else if (width < 600 && width >= 500) {
+      return Math.random() * (80 - 40) + 40;
+    } else if (width < 500) {
+      return Math.random() * (70 - 35) + 35;
+    }
   };
 
   const updateCubes = () => {
@@ -40,9 +49,17 @@ function Content() {
 
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
-        const size = getRandomSize();
-        const xPosition = col * (size + gap) + 120; // 横位置
-        const yPosition = row * (size + gap) + 100; // 縦位置
+        const size = getRandomSize(screenWidth);
+        let xPosition;
+        let yPosition;
+        yPosition = row * (size + gap) + 100;
+        if (screenWidth >= 600) {
+          xPosition = col * (size + gap) + 120;
+        } else if (screenWidth < 600 && screenWidth >= 500) {
+          xPosition = col * (size + gap) + 50;
+        } else {
+          xPosition = col * (size + gap) + 30;
+        }
 
         newCubes.push(
           <Cube
@@ -68,21 +85,19 @@ function Content() {
   return (
     <div className="App">
       {dataInfo && <ModalWork />}
+      {modalMenu && <ModalMenu />}
       {cubes}
       <Topbar />
-      <Routes>
-        <Route path="/*" element={<Home />} />
-        <Route path="/LiveGT" element={<LiveGT />} />
-      </Routes>
+      <Home />
     </div>
   )
 }
 
 function App() {
   return (
-    <Router >
+    <>
       <Content />
-    </Router>
+    </>
   );
 }
 

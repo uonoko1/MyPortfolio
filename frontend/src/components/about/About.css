@@ -63,6 +63,7 @@ screen and (max-width: 600px) {
 @media screen and (max-height: 770px) {
     .AboutContent p {
         line-height: 25px;
+        margin-bottom: 3.5rem;
     }
 }
 

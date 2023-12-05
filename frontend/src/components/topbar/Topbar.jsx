@@ -4,7 +4,7 @@ import { useClickContext } from '../../state/ClickContext';
 import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Topbar() {
-    const { topRef, aboutRef, profileRef, worksRef, contactRef } = useClickContext();
+    const { topRef, aboutRef, profileRef, worksRef, contactRef, setModalMenu } = useClickContext();
 
     const scrollToRef = (ref) => {
         if (ref && ref.current) {
@@ -15,7 +15,7 @@ export default function Topbar() {
     return (
         <div className="TopbarContainer">
             <div className="TopbarContent">
-                <MenuIcon className="TopbarContentMenuIcon" />
+                <MenuIcon className="TopbarContentMenuIcon" onClick={() => setModalMenu(true)} />
                 <img src={`${process.env.REACT_APP_API_URL_A}/assets/brandmark-design.png`} alt="brandmark-design" className="TopbarContentImg" />
                 <div className="TopbarContentList">
                     <button type="button" className="TopbarContentListButton" onClick={() => scrollToRef(topRef)}>Top</button>

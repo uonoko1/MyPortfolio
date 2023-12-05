@@ -10,6 +10,7 @@ export function useClickContext() {
 export function Clickcontextprovider({ children }) {
 
     const [dataInfo, setDataInfo] = useState("");
+    const [modalMenu, setModalMenu] = useState(false);
     const topRef = useRef(null);
     const aboutRef = useRef(null);
     const profileRef = useRef(null);
@@ -17,7 +18,7 @@ export function Clickcontextprovider({ children }) {
     const contactRef = useRef(null);
 
     return (
-        <ClickContext.Provider value={{ dataInfo, setDataInfo, topRef, aboutRef, profileRef, worksRef, contactRef }}>
+        <ClickContext.Provider value={{ dataInfo, setDataInfo, topRef, aboutRef, profileRef, worksRef, contactRef, modalMenu, setModalMenu }}>
             {children}
         </ClickContext.Provider>
     )

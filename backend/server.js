@@ -1,7 +1,22 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const PORT = 5002;
+let PORT;
+switch (process.env.NODE_ENV) {
+    case 'http://localhost:3010':
+        PORT = 5010;
+        break;
+    case 'https://staging.daichisakai.net':
+        PORT = 5011;
+        break;
+    case 'https://daichisakai.net':
+        PORT = 5010;
+        break;
+    default:
+        PORT = 5010;
+        break;
+}
+
 const cors = require("cors");
 const { SES } = require('@aws-sdk/client-ses');
 const emailValidator = require("email-validator");
@@ -18,7 +33,7 @@ const ses = new SES({
 app.use(express.json());
 
 app.use(cors({
-    origin: process.env.API_URL, // フロントエンドのURLを追加
+    origin: process.env.NODE_ENV, // フロントエンドのURLを追加
     credentials: true  // enable set cookie
 }));
 

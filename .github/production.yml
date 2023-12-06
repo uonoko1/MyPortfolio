@@ -1,0 +1,87 @@
+name: Deploy to Production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Frontend build and deploy
+    - name: Use Node.js 14.x for frontend
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: cd frontend && npm ci
+    - name: Create .env file for frontend
+      run: |
+        echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} >> frontend/.env
+        echo REACT_APP_API_URL_A=${{ secrets.REACT_APP_API_URL_A }} >> frontend/.env
+    - name: Setup SSH keys
+      run: |
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > deploy_key.pem
+        chmod 600 deploy_key.pem
+    - name: Test SSH connection
+      run: |
+        ssh -v -i deploy_key.pem -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} exit
+    - name: Add server to known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+    - name: Transfer frontend files and .env to production
+      run: |
+        rsync -avz --exclude='node_modules' -e "ssh -i deploy_key.pem" frontend/ ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH_FRONTEND }}
+    - name: Install dependencies and build on remote server
+      run: |
+        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cd ${{ secrets.PATH_FRONTEND }} && npm install && npm run build --if-present'
+    - name: Deploy frontend to production
+      run: |
+        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'rm -rf /var/www/daichisakai.net/*'
+        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cp -r ${{ secrets.PATH_FRONTEND }}/build/* /var/www/daichisakai.net/'
+    - run: rm deploy_key.pem
+
+
+
+
+    # Backend build and deploy
+    - name: Use Node.js 14.x for backend
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: cd backend && npm ci
+    - name: Create .env file for backend
+      run: |
+        echo "NODE_ENV=${{ secrets.NODE_ENV_PRODUCTION }}" >> backend/.env
+        echo "AWS_REGION=${{ secrets.AWS_REGION }}" >> backend/.env
+        echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> backend/.env
+        echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> backend/.env
+        echo EMAIL=${{ secrets.EMAIL }} >> backend/.env
+    - name: Setup SSH keys
+      run: |
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > deploy_key.pem
+        chmod 600 deploy_key.pem
+    - name: Test SSH connection
+      run: |
+        ssh -v -i deploy_key.pem -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} exit
+    - name: Add server to known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+    - name: Transfer backend files and .env to production
+      run: |
+        rsync -avz --exclude='node_modules' -e "ssh -i deploy_key.pem" backend/ ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH_BACKEND }}
+    - name: Install dependencies on remote server
+      run: |
+        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cd ${{ secrets.PATH_BACKEND }} && npm install'
+    - name: Start application with PM2 on remote server
+      run: |
+        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} '
+        export PATH=$PATH:/home/ubuntu/.npm-global/bin 
+        cd ${{ secrets.PATH_BACKEND }} 
+        if pm2 jlist | grep -q DaichiSakai'sPortfolio; then pm2 delete DaichiSakai'sPortfolio; fi
+        pm2 start server.js --name DaichiSakai'sPortfolio --watch'
+    - run: rm deploy_key.pem
+  

@@ -33,7 +33,7 @@ jobs:
         ssh-keyscan ${{ secrets.HOST }} >> ~/.ssh/known_hosts
     - name: Transfer frontend files and .env to production
       run: |
-        rsync -avz --exclude='node_modules' --no-times -e "ssh -i deploy_key.pem" frontend/ ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH_FRONTEND }}
+        rsync -avz --exclude='node_modules' --no-times --no-perms -e "ssh -i deploy_key.pem" frontend/ ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH_FRONTEND }}
     - name: Install dependencies and build on remote server
       run: |
         ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cd ${{ secrets.PATH_FRONTEND }} && npm install && npm run build --if-present'
@@ -72,7 +72,7 @@ jobs:
         ssh-keyscan ${{ secrets.HOST }} >> ~/.ssh/known_hosts
     - name: Transfer backend files and .env to production
       run: |
-        rsync -avz --exclude='node_modules' --no-times -e "ssh -i deploy_key.pem" backend/ ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH_BACKEND }}
+        rsync -avz --exclude='node_modules' --no-times --no-perms -e "ssh -i deploy_key.pem" backend/ ${{ secrets.USER }}@${{ secrets.HOST }}:${{ secrets.PATH_BACKEND }}
     - name: Install dependencies on remote server
       run: |
         ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cd ${{ secrets.PATH_BACKEND }} && npm install'

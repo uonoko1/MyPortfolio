@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const PORT = 5000;
+const PORT = 5010;
 
 const cors = require("cors");
 const { SES } = require('@aws-sdk/client-ses');

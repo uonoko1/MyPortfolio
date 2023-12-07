@@ -19,8 +19,8 @@ jobs:
     - run: cd frontend && npm ci
     - name: Create .env file for frontend
       run: |
-        echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} >> frontend/.env
-        echo REACT_APP_API_URL_A=${{ secrets.REACT_APP_API_URL_A }} >> frontend/.env
+        echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL_STAGING }} >> frontend/.env
+        echo REACT_APP_API_URL_A=${{ secrets.REACT_APP_API_URL_A_STAGING }} >> frontend/.env
     - name: Setup SSH keys
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > deploy_key.pem

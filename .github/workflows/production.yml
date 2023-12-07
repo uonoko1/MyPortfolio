@@ -18,8 +18,8 @@ jobs:
     - run: cd frontend && npm ci
     - name: Create .env file for frontend
       run: |
-        echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} >> frontend/.env
-        echo REACT_APP_API_URL_A=${{ secrets.REACT_APP_API_URL_A }} >> frontend/.env
+        echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL_PRODUCTION }} >> frontend/.env
+        echo REACT_APP_API_URL_A=${{ secrets.REACT_APP_API_URL_A_PRODUCTION }} >> frontend/.env
     - name: Setup SSH keys
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" | base64 --decode > deploy_key.pem
@@ -78,10 +78,10 @@ jobs:
         ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cd ${{ secrets.PATH_BACKEND }} && npm install'
     - name: Start application with PM2 on remote server
       run: |
-        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} '
-        export PATH=$PATH:/home/ubuntu/.npm-global/bin 
-        cd ${{ secrets.PATH_BACKEND }} 
-        if pm2 jlist | grep -q DaichiSakai'sPortfolio; then pm2 delete DaichiSakai'sPortfolio; fi
-        pm2 start server.js --name DaichiSakai'sPortfolio --watch'
+        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }}  '
+        export PATH=$PATH:/home/githubactions/.npm-global/bin
+        cd ${{ secrets.PATH_BACKEND }}
+        if pm2 jlist | grep -q MyPortfolio-production; then pm2 delete MyPortfolio-production; fi
+        pm2 start server.js --name MyPortfolio-production --watch'
     - run: rm deploy_key.pem
   

@@ -39,19 +39,19 @@ export default function Works() {
             } else if (screenWidth < 1100 && screenWidth >= 1000) {
                 positions = [
                     { x: xPosition * 0.75, y: yPosition * 0.6, data: "LiveGT" },
-                    { x: xPosition * 0.80, y: yPosition * 1.4, data: "AdminLiveGT" },
+                    { x: xPosition * 0.85, y: yPosition * 1.4, data: "AdminLiveGT" },
                     { x: xPosition * 0.95, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
                 ];
             } else if (screenWidth < 1000 && screenWidth >= 600) {
                 positions = [
                     { x: xPosition * 0.6, y: yPosition * 0.6, data: "LiveGT" },
-                    { x: xPosition * 0.70, y: yPosition * 1.5, data: "AdminLiveGT" },
-                    { x: xPosition * 0.80, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
+                    { x: xPosition * 0.64, y: yPosition * 1.5, data: "AdminLiveGT" },
+                    { x: xPosition * 0.68, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
                 ];
             } else if (screenWidth < 600 && screenWidth >= 500) {
                 positions = [
                     { x: xPosition * 0.6, y: yPosition * 0.6, data: "LiveGT" },
-                    { x: xPosition * 0.55, y: yPosition * 1.6, data: "AdminLiveGT" },
+                    { x: xPosition * 0.52, y: yPosition * 1.6, data: "AdminLiveGT" },
                     { x: xPosition * 0.42, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
                 ];
             } else if (screenWidth < 600 && screenWidth >= 500) {
@@ -62,9 +62,9 @@ export default function Works() {
                 ];
             } else {
                 positions = [
-                    { x: xPosition * 0.57, y: yPosition * 0.6, data: "LiveGT" },
-                    { x: xPosition * 0.43, y: yPosition * 1.4, data: "AdminLiveGT" },
-                    { x: xPosition * 0.2, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
+                    { x: xPosition * 0.54, y: yPosition * 0.6, data: "LiveGT" },
+                    { x: xPosition * 0.37, y: yPosition * 1.4, data: "AdminLiveGT" },
+                    { x: xPosition * 0.18, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
                 ];
             }
             setCubePositions(positions);

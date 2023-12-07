@@ -82,7 +82,9 @@ jobs:
         ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} "\
         export PATH=$PATH:/home/ubuntu/.npm-global/bin; \
         cd ${{ secrets.PATH_BACKEND }}; \
-        if pm2 jlist | grep -q 'DaichiSakai\'sPortfolio-staging'; then pm2 delete 'DaichiSakai\'sPortfolio-staging'; fi; \
+        if pm2 jlist | grep -q 'DaichiSakai\'sPortfolio-staging'; then \
+          pm2 delete 'DaichiSakai\'sPortfolio-staging'; \
+        fi; \
         pm2 start server.js --name 'DaichiSakai\'sPortfolio-staging' --watch"
     - run: rm deploy_key.pem
   

@@ -62,9 +62,9 @@ export default function Works() {
                 ];
             } else {
                 positions = [
-                    { x: xPosition * 0.62, y: yPosition * 0.6, data: "LiveGT" },
+                    { x: xPosition * 0.57, y: yPosition * 0.6, data: "LiveGT" },
                     { x: xPosition * 0.43, y: yPosition * 1.4, data: "AdminLiveGT" },
-                    { x: xPosition * 0.22, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
+                    { x: xPosition * 0.2, y: yPosition * 0.6, data: "Daichi Sakai's Portfolio" }
                 ];
             }
             setCubePositions(positions);

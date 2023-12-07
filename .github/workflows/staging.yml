@@ -83,6 +83,6 @@ jobs:
         export PATH=$PATH:/home/ubuntu/.npm-global/bin
         cd ${{ secrets.PATH_BACKEND }}
         if pm2 jlist | grep -q DaichiSakaisPortfolio-staging; then pm2 delete DaichiSakaisPortfolio-staging; fi
-        pm2 start server.js --name DaichiSakaisPortfolio-staging --watch"
+        pm2 start server.js --name DaichiSakaisPortfolio-staging --watch'
     - run: rm deploy_key.pem
   

@@ -36,9 +36,12 @@
     width: calc(100%/5);
 }
 
-.TopbarContentMenuIcon {
-    display: none;
+@media screen and (min-width: 600px) {
+    .TopbarContentMenuIcon {
+        display: none !important;
+    }
 }
+
 
 @media screen and (min-width: 600px) {
     .TopbarContent {

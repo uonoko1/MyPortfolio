@@ -217,7 +217,7 @@ export default function Profile() {
 
                                 <div className="ProfileMySkillContentWholeBlock window">
                                     <div className="ProfileMySkillContentTitle title-bar">
-                                        <h3 className="title-bar-text">使用技術</h3>
+                                        <h3 className="title-bar-text">skills</h3>
                                         <div className="title-bar-controls">
                                             <button aria-label="Minimize"></button>
                                             <button aria-label="Maximize"></button>

@@ -1,0 +1,242 @@
+.ResumeWrapper {
+    width: 100%;
+    height: 100vh;
+    font-family: Avenir Next, "Helvetica Neue", -apple-system, sans-serif;
+}
+
+.ResumeWrapper div,
+.ResumeWrapper time,
+.ResumeWrapper p,
+.ResumeWrapper span,
+.ResumeWrapper h1,
+.ResumeWrapper h2,
+.ResumeWrapper h3,
+.ResumeWrapper h4 {
+    color: #585858;
+}
+
+.ResumeWrapper h1 {
+    font-size: 2rem !important;
+}
+
+.ResumeWrapper h2 {
+    font-size: 1.5rem !important;
+}
+
+.ResumeWrapper h3 {
+    font-size: 1.25rem !important;
+}
+
+.ResumeWrapper h4 {
+    font-size: 1rem !important;
+}
+
+.container {
+    max-width: 38rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 48em) {
+    .ResumeSidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 18rem;
+        text-align: left;
+    }
+
+    .ResumeSidebarSticky {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+    }
+}
+
+.ResumeSidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+.ResumeContainer {
+    width: 100%;
+}
+
+@media (min-width: 48em) {
+    .ResumeContainer {
+        max-width: 58rem;
+        margin-left: 30rem;
+        margin-right: 4rem;
+    }
+}
+
+@media (min-width: 64em) {
+
+    .ResumeContainer {
+        margin-left: 28rem;
+        margin-right: 6rem;
+    }
+}
+
+
+.ResumeContainer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.ResumeWrapper button {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    text-shadow: none;
+    font-family: Arial;
+    padding: 0;
+    min-width: auto !important;
+    min-height: auto !important;
+    font-size: inherit;
+}
+
+.ResumeWrapper p {
+    color: #585858;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.ResumeWrapper a {
+    color: #585858;
+    text-decoration: none;
+}
+
+.ResumeSidebarH1 h1 {
+    color: #0075C2;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.ResumeSidebarUl {
+    padding-left: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.ResumeSidebarUl p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #585858;
+}
+
+.ResumeContent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+
+.ResumeContent time {
+    display: block;
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #585858;
+}
+
+.ResumeContentTitle {
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    font-feature-settings: "palt" 1;
+    font-size: 1.7rem;
+    margin-bottom: 4.25rem;
+    margin-top: 0.6rem;
+    color: #252525 !important;
+}
+
+.ResumeContent p {
+    font-size: 1rem;
+    font-feature-settings: "kern";
+    font-kerning: normal;
+    line-height: 2.2rem;
+    letter-spacing: 0.04em;
+    /* margin-top: 2.25rem; */
+    margin-bottom: 4.5rem;
+}
+
+.ResumeContent h2,
+.ResumeContent h3,
+.ResumeContent h4 {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #313131;
+    text-rendering: optimizeLegibility;
+}
+
+.ResumeContent h2 {
+    font-weight: 600;
+    margin-top: 4.5rem;
+    margin-bottom: 2.25rem;
+}
+
+.ResumeContent h3 {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    font-weight: 600;
+}
+
+.ResumeSidebarUl {
+    list-style: none;
+}
+
+.ResumeContent ul,
+.ResumeContent ul ul {
+    padding-inline-start: 40px;
+    margin-bottom: 1rem;
+}
+
+.ResumeContent li {
+    list-style-type: disc;
+}
+
+.ResumeContent li li {
+    list-style-type: circle;
+}
+
+.ResumeContent li {
+    font-size: 1rem;
+}
+
+.ResumeContent span {
+    font-size: 1rem;
+}
+
+.ResumeURL {
+    color: #0075C2 !important;
+}
+
+@media print {
+
+    .ResumeSidebar,
+    time {
+        display: none !important;
+    }
+
+    .ResumeContent li {
+        list-style-type: disc;
+        list-style-position: outside;
+    }
+
+    .ResumeContent ul,
+    .ResumeContent ul ul {
+        padding-inline-start: 40px;
+        margin-bottom: 1rem;
+    }
+}

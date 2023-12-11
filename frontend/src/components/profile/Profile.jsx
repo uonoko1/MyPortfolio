@@ -1,19 +1,30 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import "./Profile.css";
 import "98.css";
 import { useClickContext } from '../../state/ClickContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
     const { profileRef } = useClickContext();
+    const navigate = useNavigate();
     return (
         <div className="ProfileWrapper" ref={profileRef}>
             <div className="ProfileContainer">
-                <h1>Profile</h1>
+                <div className="ProfileContentTitle">
+                    <h1>Profile</h1>
+                    <a href="https://github.com/uonoko1" target="_blank" rel="noopener noreferrer" className="githubLinkContainer">
+                        <img src={`${process.env.REACT_APP_API_URL_A}/assets/github-mark.png`} alt="GitHub" className="githubLink" />
+                    </a>
+                </div>
+
                 <div className="ProfileContent">
                     <img src={`${process.env.REACT_APP_API_URL_A}/assets/PortfolioProfileImg.jpg`} alt="" className="ProfileContainImg" />
                     <div className="ProfileMyHistoryAndMySkill">
                         <div className="ProfileMyHistory">
-                            <h2>Job History</h2>
+                            <div className="ProfileMyHistoryTitle">
+                                <h2>Job History</h2>
+                                <button type="button" className="ResumeButton URL" onClick={() => navigate("/resume")}>詳しく</button>
+                            </div>
                             <ul className="ProfileMyHistoryUl">
                                 <li>
                                     <p>・2022年3月31日：</p>
@@ -105,7 +116,7 @@ export default function Profile() {
                                         </div>
                                         <div className="ProfileMySkillContentList">
                                             <button type="button" className="ProfileMySkillContentListButton">Node.js</button>
-                                            <button type="button" className="ProfileMySkillContentListButton">stripe</button>
+                                            <button type="button" className="ProfileMySkillContentListButton">Express.js</button>
                                         </div>
                                     </div>
                                     <div className="ProfileMySkillContent window">
@@ -118,7 +129,6 @@ export default function Profile() {
                                             </div>
                                         </div>
                                         <div className="ProfileMySkillContentList">
-                                            <button type="button" className="ProfileMySkillContentListButton">Ubuntu</button>
                                             <button type="button" className="ProfileMySkillContentListButton">Nginx</button>
                                             <button type="button" className="ProfileMySkillContentListButton">Prometheus・Grafana</button>
                                             <button type="button" className="ProfileMySkillContentListButton">GitHub Actions</button>
@@ -166,7 +176,7 @@ export default function Profile() {
                                         </div>
                                         <div className="ProfileMySkillContentList">
                                             <button type="button" className="ProfileMySkillContentListButton">Node.js</button>
-                                            <button type="button" className="ProfileMySkillContentListButton">stripe</button>
+                                            <button type="button" className="ProfileMySkillContentListButton">Express.js</button>
                                         </div>
                                     </div>
                                     <div className="ProfileMySkillContent ProfileMySkillContentRight window">
@@ -207,7 +217,6 @@ export default function Profile() {
                                             </div>
                                         </div>
                                         <div className="ProfileMySkillContentList">
-                                            <button type="button" className="ProfileMySkillContentListButton">Ubuntu</button>
                                             <button type="button" className="ProfileMySkillContentListButton">Nginx</button>
                                             <button type="button" className="ProfileMySkillContentListButton">Prometheus・Grafana</button>
                                             <button type="button" className="ProfileMySkillContentListButton">GitHub Actions</button>
@@ -231,7 +240,7 @@ export default function Profile() {
                                             <p>CSS3</p>
                                             <li>バックエンド</li>
                                             <p>Node.js</p>
-                                            <p>stripe</p>
+                                            <p>Express.js</p>
                                             <li>インフラ</li>
                                             <p>AWS(SES)</p>
                                             <p>BackBlaze</p>
@@ -244,7 +253,6 @@ export default function Profile() {
                                             <li>データベース</li>
                                             <p>MongoDB</p>
                                             <li>DevOps/CI/CD</li>
-                                            <p>Ubuntu</p>
                                             <p>Nginx</p>
                                             <p>Prometheus・Grafana</p>
                                             <p>Github Actions</p>

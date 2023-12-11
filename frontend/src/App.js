@@ -6,8 +6,10 @@ import Cube from './components/cube/Cube';
 import ModalWork from './components/modalWork/ModalWork';
 import { useClickContext } from './state/ClickContext';
 import ModalMenu from './components/modalMenu/ModalMenu';
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import Resume from './pages/home/resume/Resume';
 
-function Content() {
+function Portfolio() {
   const { dataInfo, setDataInfo, modalMenu, setModalMenu } = useClickContext();
 
   const [cubes, setCubes] = useState([]);
@@ -93,10 +95,21 @@ function Content() {
   )
 }
 
+function Content() {
+  return (
+    <Routes>
+      <Route path="/" element={<Portfolio />} />
+      <Route path="/resume" element={<Resume />} />
+    </Routes>
+  )
+}
+
 function App() {
   return (
     <>
-      <Content />
+      <Router>
+        <Content />
+      </Router>
     </>
   );
 }

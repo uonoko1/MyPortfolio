@@ -7,8 +7,43 @@
     flex-direction: column;
 }
 
-.ProfileContainer h1 {
+.ProfileContentTitle {
     margin-top: 4rem;
+    margin-left: calc(3.5em + 1rem);
+    display: flex;
+    align-items: center;
+    /* 中央揃え */
+    justify-content: center;
+}
+
+.githubLinkContainer {
+    background-color: white;
+    border-radius: 50%;
+    height: 3.5em;
+    width: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    border: none;
+    color: transparent;
+    outline: none;
+}
+
+.githubLinkContainer:active,
+.githubLinkContainer:visited,
+.githubLinkContainer:focus {
+    outline: none;
+    border: none;
+    color: transparent;
+    background-color: white;
+    box-shadow: none;
+}
+
+.githubLink {
+    width: auto;
+    height: 55%;
+    object-fit: contain;
 }
 
 .ProfileContainer {
@@ -35,7 +70,7 @@ screen and (max-width: 600px) {
         /* padding: 4rem; */
     }
 
-    .ProfileWrapper h1 {
+    .ProfileContentTitle {
         margin-top: 2rem;
     }
 
@@ -289,4 +324,32 @@ screen and (max-width: 600px) {
     .ProfileMySkillContentWholeUl {
         padding-bottom: 0.5rem;
     }
+}
+
+.ResumeButton {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+}
+
+.ResumeButton:active {
+    background-color: none;
+    outline: none;
+    border-color: transparent;
+    box-shadow: none !important;
+    text-decoration: underline;
+}
+
+.ProfileMyHistoryTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProfileMyHistoryTitle h2 {
+    margin-left: 75px;
 }

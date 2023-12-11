@@ -98,11 +98,19 @@
     appearance: none;
     box-shadow: none;
     text-shadow: none;
-    font-family: Arial;
+    font-family: Avenir Next, "Helvetica Neue", -apple-system, sans-serif;
     padding: 0;
     min-width: auto !important;
     min-height: auto !important;
     font-size: inherit;
+}
+
+.ResumeWrapper button:active {
+    background-color: none;
+    outline: none;
+    border-color: transparent;
+    box-shadow: none !important;
+    text-decoration: underline;
 }
 
 .ResumeWrapper p {

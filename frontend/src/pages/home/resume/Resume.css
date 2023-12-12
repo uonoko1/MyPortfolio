@@ -57,6 +57,19 @@
     }
 }
 
+@media (max-width: 48em) {
+    .ResumeSidebarSticky {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ResumeSidebarSticky button h1 {
+        text-align: center;
+    }
+}
+
 .ResumeSidebar {
     display: flex;
     flex-direction: column;
@@ -70,14 +83,24 @@
 @media (min-width: 48em) {
     .ResumeContainer {
         max-width: 58rem;
-        margin-left: 30rem;
-        margin-right: 4rem;
+        width: calc(100% - 20rem);
+        margin-left: 18rem;
+        margin-right: 2rem;
+    }
+}
+
+@media (min-width: 58em) {
+    .ResumeContainer {
+        width: calc(100% - 20rem);
+        margin-left: 20rem;
+        margin-right: 0;
     }
 }
 
 @media (min-width: 64em) {
 
     .ResumeContainer {
+        width: calc(100% - 34rem);
         margin-left: 28rem;
         margin-right: 6rem;
     }
@@ -140,6 +163,20 @@
     font-size: 20px;
     line-height: 1.5;
     color: #585858;
+}
+
+@media (min-width: 48em) and (max-width: 58em) {
+    .ResumeSidebar {
+        width: 18rem
+    }
+
+    .ResumeSidebarUl p {
+        font-size: 16px;
+    }
+
+    .ResumeSidebar h1 {
+        font-size: 1.5rem !important;
+    }
 }
 
 .ResumeContent {

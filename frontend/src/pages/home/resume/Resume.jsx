@@ -42,7 +42,6 @@ export default function Resume() {
                             <li>株式会社sizebook(2022/04~2023/03)
                                 <ul>
                                     <li>リスティング広告、ディスプレイ広告等の運用</li>
-                                    <li>サイトや画像バナーなどの修正指示</li>
                                     <li>既存顧客・新規顧客(反響)への営業</li>
                                 </ul>
                             </li>

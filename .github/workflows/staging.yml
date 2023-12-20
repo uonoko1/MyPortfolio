@@ -38,6 +38,9 @@ jobs:
     - name: Install dependencies and build on remote server
       run: |
         ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cd ${{ secrets.PATH_FRONTEND }} && npm install && npm run build --if-present'
+    - name: Run update-service-worker script
+      run: |
+        ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'cd ${{ secrets.PATH_FRONTEND }} && node public/update-service-worker.js'
     - name: Deploy frontend to staging
       run: |
         ssh -i deploy_key.pem ${{ secrets.USER }}@${{ secrets.HOST }} 'rm -rf /var/www/staging.daichisakai.net/*'

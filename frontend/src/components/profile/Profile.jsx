@@ -85,7 +85,7 @@ export default function Profile() {
                                         </div>
                                         <div className="ProfileMySkillContentList">
                                             <button type="button" className="ProfileMySkillContentListButton">React.js</button>
-                                            <button type="button" className="ProfileMySkillContentListButton">javascript</button>
+                                            <button type="button" className="ProfileMySkillContentListButton">Javascript</button>
                                         </div>
                                     </div>
                                     <div className="ProfileMySkillContent ProfileMySkillContentRight window">
@@ -162,7 +162,7 @@ export default function Profile() {
                                         </div>
                                         <div className="ProfileMySkillContentList">
                                             <button type="button" className="ProfileMySkillContentListButton">React.js</button>
-                                            <button type="button" className="ProfileMySkillContentListButton">javascript</button>
+                                            <button type="button" className="ProfileMySkillContentListButton">Javascript</button>
                                         </div>
                                     </div>
                                     <div className="ProfileMySkillContent ProfileMySkillContentRight window">
@@ -249,7 +249,7 @@ export default function Profile() {
                                         <ul className="ProfileMySkillContentDiv">
                                             <li>フロントエンド</li>
                                             <p>React.js</p>
-                                            <p>javascript</p>
+                                            <p>Javascript</p>
                                             <li>データベース</li>
                                             <p>MongoDB</p>
                                             <li>DevOps/CI/CD</li>
